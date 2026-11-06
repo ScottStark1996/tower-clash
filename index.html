@@ -1051,7 +1051,7 @@ function deckGalleryGroups(setId) {
     const id = queue.shift();
     const d = CHAR_DEFS[id];
     if (!d) continue;
-    [d.transformsInto, d.autoTransform && d.autoTransform.into, CYBERNETIC_TRANSFORM[id]].forEach((to) => {
+    [d.transformsInto, d.autoTransform && d.autoTransform.into, d.deathForm && d.deathForm.into, CYBERNETIC_TRANSFORM[id]].forEach((to) => {
       if (to && !seen.has(to) && CHAR_DEFS[to]) {
         seen.add(to);
         forms.push({ card: { kind: "character", tplId: to }, n: 0 });
